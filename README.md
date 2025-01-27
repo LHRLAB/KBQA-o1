@@ -1,6 +1,6 @@
-# AgentKBQA
+# KBQA-o1
 
-AgentKBQA: Heuristic Environment Exploration with LLM Agents for Low-Resource Knowledge Base Question Answering
+KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search
 
 ## Overview
 
@@ -10,8 +10,8 @@ AgentKBQA: Heuristic Environment Exploration with LLM Agents for Low-Resource Kn
 
 #### Step1: Conda Environment
 ```bash
-conda create -n agentkbqa python=3.11
-conda activate agentkbqa
+conda create -n kbqao1 python=3.11
+conda activate kbqao1
 pip install torch==2.3.0
 pip install -r requirements.txt
 sudo apt install unixodbc
