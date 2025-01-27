@@ -1,0 +1,119 @@
+<?vsp
+--
+--  $Id$
+--
+--  This file is part of the OpenLink Software Virtuoso Open-Source (VOS)
+--  project.
+--
+--  Copyright (C) 1998-2018 OpenLink Software
+--
+--  This project is free software; you can redistribute it and/or modify it
+--  under the terms of the GNU General Public License as published by the
+--  Free Software Foundation; only version 2 of the License, dated June 1991.
+--
+--  This program is distributed in the hope that it will be useful, but
+--  WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+--  General Public License for more details.
+--
+--  You should have received a copy of the GNU General Public License along
+--  with this program; if not, write to the Free Software Foundation, Inc.,
+--  51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+--
+--
+?>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<?vsp
+  declare have_cond, have_wa, have_doc, have_tut, have_phpbb, have_fct, deadl int;
+
+  deadl := 0;
+  have_cond := 0; have_wa := 0; have_doc := 0; have_tut := 0; have_phpbb := 0; have_fct := 0;
+
+  declare exit handler for sqlstate '40001'
+  {
+    rollback work;
+    deadl := deadl + 1;
+    if (deadl < 4)
+      goto again;
+    resignal;
+  };
+
+  set isolation='uncommitted';
+
+again:
+
+  if (VAD_CHECK_VERSION ('conductor') is not null or exists (select 1 from HTTP_PATH where HP_LPATH = '/conductor'))
+    have_cond := 1;
+  if (VAD_CHECK_VERSION ('Framework') is not null)
+    have_wa := 1;
+  if (VAD_CHECK_VERSION ('doc') is not null)
+    have_doc := 1;
+  if (VAD_CHECK_VERSION ('tutorial') is not null)
+    have_tut := 1;
+  if (VAD_CHECK_VERSION ('phpBB3') is not null)
+    have_phpbb := 1;
+  if (VAD_CHECK_VERSION ('fct') is not null)
+    have_fct := 1;
+
+?><html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/default.css">
+    </head>
+    <body id="LCB">
+      <?vsp if (have_cond) { ?>
+      <ul class="left_nav">
+	<li><img src="/images/nav_arrrow1.gif" width="8" height="8" /> <a href="/conductor/" target="_top">Conductor</a></li>
+      </ul>
+      <?vsp } ?>
+
+      <?vsp if (have_fct) { ?>
+      <ul class="left_nav">
+	<li><img src="/images/nav_arrrow1.gif" width="8" height="8" /> <a href="/fct/" target="_top">Faceted Browser</a></li>
+      </ul>
+      <?vsp } ?>
+
+      <ul class="left_nav">
+	<li><img src="/images/nav_arrrow1.gif" width="8" height="8" /> <a href="/sparql/" target="_top">SPARQL endpoint</a></li>
+      </ul>
+
+      <?vsp if (have_wa) { ?>
+      <ul class="left_nav">
+	<li><img src="/images/nav_arrrow1.gif" width="8" height="8" /> <a href="<?V wa_link () ?>" target="_top">OpenLink Data Spaces</a></li>
+      </ul>
+      <?vsp } ?>
+
+      <?vsp if (have_phpbb) { ?>
+      <ul class="left_nav">
+	<li><img src="/images/nav_arrrow1.gif" width="8" height="8" /> <a href="/phpBB3/" target="_top">phpBB</a></li>
+      </ul>
+      <?vsp } ?>
+
+      <ul class="left_nav">
+	  <!--li><img src="/images/tour_16.png" width="16" height="16" /><a href="http://support.openlinksw.com/support/tutorials.vsp">Take A Tour</a></li-->
+      <!--li><img src="/images/wnew_16.png" width="16" height="16" /><a href="/newfeatures.html" target="_top">What's New</a></li-->
+      <?vsp if (have_doc) { ?>
+      <li><img src="/images/docs_16.png" width="16" height="16" /><a href="/doc/html/" target="_top">Documentation<small> (local)</small></a></li>
+      <?vsp } else { ?>
+      <li><img src="/images/docs_16.png" width="16" height="16" /><a href="http://docs.openlinksw.com/virtuoso/" target="_top">Documentation<small> (web)</small></a></li>
+      <?vsp } ?>
+      <?vsp if (have_tut) { ?>
+      <li><img src="/images/tour_16.png" width="16" height="16" /><a href="/tutorial/" target="_top">Tutorials<small> (local)</small></a></li>
+      <?vsp } else { ?>
+      <li><img src="/images/tour_16.png" width="16" height="16" /><a href="http://demo.openlinksw.com/tutorial/" target="_top">Tutorials<small> (web)</small></a></li>
+      <?vsp } ?>
+      <!--li><img src="/images/docs_16.png" width="16" height="16" /><a href="releasenotes.html">Release Notes</a> </li-->
+    <li class="xtern"></li>
+  </ul>
+
+  <ul class="left_nav">
+    <li class="xtern"><img src="/images/web_16.png" width="16" height="16" /><a href="http://virtuoso.openlinksw.com/" target="_top">Virtuoso Web Site</a>
+    </li>
+    <li class="xtern"><img src="/images/web_16.png" width="16" height="16" /><a href="http://www.openlinksw.com" target="_top">OpenLink Software</a>
+    </li>
+  </ul>
+      <ul class="left_id">
+        <li>Version: <?V sys_stat ('st_dbms_ver') ?></li>
+        <li>Build: <?V sys_stat ('st_build_date') ?></li>
+      </ul>
+</body>
+</html>
