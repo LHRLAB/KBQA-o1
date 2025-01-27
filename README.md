@@ -46,7 +46,7 @@ A server with at least 100 GB RAM is recommended.
 #### Step3: Download Freebase Ontology Files
 - Download `fb_roles`, `fb_types`, `reverse_properties` from [here](https://github.com/dki-lab/GrailQA/tree/main/ontology) to `dataset/Freebase/`.
 ```
-AgentKBQA/
+KBQA-o1/
 └── dataset/
     ├── Freebase/   
         ├── fb_roles
@@ -62,7 +62,7 @@ Experiments are conducted on 3 classical KBQA benchmarks: WebQSP, GrailQA and Gr
 - **GraphQ**: Download the GraphQ dataset [here](https://github.com/dki-lab/GrailQA/tree/main/data) and put them under both `dataset/GraphQ/origin`. The dataset files should be named as `graphquestions_v1_fb15_test[training]_091420.json`.
 
 ```
-AgentKBQA/
+KBQA-o1/
 └── dataset/
     ├── WebQSP/                  
         ├── origin/                    
@@ -87,7 +87,7 @@ Parse SPARQL queries to S-expressions and Function-lists.
 - **GraphQ**: Run `python data_process.py --dataset GraphQ` and the merged data file will be saved as `dataset/GraphQ/processed/GraphQ_train[test].json`.
 
 ```
-AgentKBQA/
+KBQA-o1/
 └── dataset/
     ├── WebQSP/                  
         ├── processed/                    
@@ -103,7 +103,7 @@ AgentKBQA/
             └── GraphQ_test.json                                        
 ```
 
-## AgentKBQA
+## KBQA-o1
 
 ### WebQSP
 
