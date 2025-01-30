@@ -79,7 +79,9 @@ def run_kbqa():
     llm_reward = f'http://localhost:{args.llm_reward_name}'
     base_model = {'simulate':llm_simulate, 'reward':llm_reward}
     dataset = args.dataset
-    if args.task!='explore':
+    if args.task=='explore':
+        ex = True
+    else:
         ex = False
     
     kbqa_data = json.load(open(f'dataset/{dataset}/processed/{dataset}_{"train" if ex else "test"}.json'))       
