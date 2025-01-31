@@ -325,3 +325,7 @@ CUDA_VISIBLE_DEVICES=2 nohup python run_explore.py --llm_simulate_name 8105/simu
 ```bash
 bash utils/kill_llm_api_GraphQ.sh
 ```
+
+## Acknowledgement
+
+This repo benefits from [KB-Coder](https://github.com/Arthurizijar/KB-Coder), [LLM-Reasoners](https://github.com/maitrix-org/llm-reasoners) and [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their wonderful works.
