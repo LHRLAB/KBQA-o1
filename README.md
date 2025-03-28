@@ -326,6 +326,24 @@ CUDA_VISIBLE_DEVICES=2 nohup python run_explore.py --llm_simulate_name 8105/simu
 bash utils/kill_llm_api_GraphQ.sh
 ```
 
+## BibTex
+
+If you find this work is helpful for your research, please cite:
+
+```bibtex
+@misc{luo2025kbqao1agenticknowledgebase,
+      title={KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search}, 
+      author={Haoran Luo and Haihong E and Yikai Guo and Qika Lin and Xiaobao Wu and Xinyu Mu and Wenhao Liu and Meina Song and Yifan Zhu and Luu Anh Tuan},
+      year={2025},
+      eprint={2501.18922},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2501.18922}, 
+}
+```
+
+For further questions, please contact: luohaoran@bupt.edu.cn.
+
 ## Acknowledgement
 
 This repo benefits from [KB-Coder](https://github.com/Arthurizijar/KB-Coder), [LLM-Reasoners](https://github.com/maitrix-org/llm-reasoners) and [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their wonderful works.
