@@ -331,7 +331,7 @@ bash utils/kill_llm_api_GraphQ.sh
 If you find this work is helpful for your research, please cite:
 
 ```bibtex
-@misc{luo2025kbqao1agenticknowledgebase,
+@misc{luo2025kbqao1,
       title={KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search}, 
       author={Haoran Luo and Haihong E and Yikai Guo and Qika Lin and Xiaobao Wu and Xinyu Mu and Wenhao Liu and Meina Song and Yifan Zhu and Luu Anh Tuan},
       year={2025},
