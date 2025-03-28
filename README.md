@@ -1,6 +1,6 @@
 # KBQA-o1
 
-KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search
+KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search [paper](https://arxiv.org/abs/2501.18922)
 
 ## Overview
 
