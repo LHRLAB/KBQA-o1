@@ -1,6 +1,6 @@
 # KBQA-o1
 
-KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search [[paper](https://arxiv.org/abs/2501.18922)]
+Official resources of **"KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search"**. Haoran Luo, Haihong E, Yikai Guo, Qika Lin, Xiaobao Wu, Xinyu Mu, Wenhao Liu, Meina Song, Yifan Zhu, Luu Anh Tuan. **ICML 2025** \[[paper](https://arxiv.org/abs/2501.18922)\].
 
 ## Overview
 
