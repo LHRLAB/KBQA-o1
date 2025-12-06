@@ -1,6 +1,6 @@
 # KBQA-o1
 
-Official resources of **"KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search"**. Haoran Luo, Haihong E, Yikai Guo, Qika Lin, Xiaobao Wu, Xinyu Mu, Wenhao Liu, Meina Song, Yifan Zhu, Luu Anh Tuan. **ICML 2025** \[[paper](https://arxiv.org/abs/2501.18922)\].
+Official resources of **"KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search"**. Haoran Luo, Haihong E, Yikai Guo, Qika Lin, Xiaobao Wu, Xinyu Mu, Wenhao Liu, Meina Song, Yifan Zhu, Luu Anh Tuan. **ICML 2025** \[[paper](https://proceedings.mlr.press/v267/luo25d.html)\].
 
 ## Overview
 
@@ -331,14 +331,20 @@ bash utils/kill_llm_api_GraphQ.sh
 If you find this work is helpful for your research, please cite:
 
 ```bibtex
-@misc{luo2025kbqao1,
-      title={KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search}, 
-      author={Haoran Luo and Haihong E and Yikai Guo and Qika Lin and Xiaobao Wu and Xinyu Mu and Wenhao Liu and Meina Song and Yifan Zhu and Luu Anh Tuan},
-      year={2025},
-      eprint={2501.18922},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2501.18922}, 
+@InProceedings{luo2025kbqao1,
+  title = 	 {{KBQA}-o1: Agentic Knowledge Base Question Answering with {M}onte {C}arlo Tree Search},
+  author =       {Luo, Haoran and E, Haihong and Guo, Yikai and Lin, Qika and Wu, Xiaobao and Mu, Xinyu and Liu, Wenhao and Song, Meina and Zhu, Yifan and Luu, Anh Tuan},
+  booktitle = 	 {Proceedings of the 42nd International Conference on Machine Learning},
+  pages = 	 {41177--41199},
+  year = 	 {2025},
+  editor = 	 {Singh, Aarti and Fazel, Maryam and Hsu, Daniel and Lacoste-Julien, Simon and Berkenkamp, Felix and Maharaj, Tegan and Wagstaff, Kiri and Zhu, Jerry},
+  volume = 	 {267},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {13--19 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v267/main/assets/luo25d/luo25d.pdf},
+  url = 	 {https://proceedings.mlr.press/v267/luo25d.html},
+  abstract = 	 {Knowledge Base Question Answering (KBQA) aims to answer natural language questions with a large-scale structured knowledge base (KB). Despite advancements with large language models (LLMs), KBQA still faces challenges in weak KB awareness, imbalance between effectiveness and efficiency, and high reliance on annotated data. To address these challenges, we propose KBQA-o1, a novel agentic KBQA method with Monte Carlo Tree Search (MCTS). It introduces a ReAct-based agent process for stepwise logical form generation with KB environment exploration. Moreover, it employs MCTS, a heuristic search method driven by policy and reward models, to balance agentic exploration’s performance and search space. With heuristic exploration, KBQA-o1 generates high-quality annotations for further improvement by incremental fine-tuning. Experimental results show that KBQA-o1 outperforms previous low-resource KBQA methods with limited annotated data, boosting Llama-3.1-8B model’s GrailQA F1 performance to 78.5% compared to 48.5% of the previous sota method with GPT-3.5-turbo. Our code is publicly available.}
 }
 ```
 
